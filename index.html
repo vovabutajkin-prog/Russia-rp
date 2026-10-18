@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RUSSIA RP MOBILE — DELUXE EDITION</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#0d0f13;color:#e2e8f0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;-webkit-user-select:none;user-select:none}
+header{background:linear-gradient(135deg, #1a202c, #0a0e17);padding:20px;text-align:center;border-bottom:3px solid #ff9900;box-shadow:0 4px 25px rgba(0,0,0,0.6);position:relative}
+h1{color:#ff9900;margin:0;font-size:26px;text-shadow:0 2px 10px rgba(255,153,0,0.3);letter-spacing:1.5px;font-weight:900}
+.server-badge{background:#e11d48;color:white;padding:2px 8px;border-radius:20px;font-size:11px;font-weight:bold;position:absolute;top:10px;right:10px;text-transform:uppercase;box-shadow:0 0 10px rgba(225,29,72,0.4)}
+main{padding:14px;max-width:650px;margin:auto}
+.card{background:#151a22;border-radius:16px;padding:18px;margin:12px 0;border:1px solid #232d3d;box-shadow:0 8px 16px rgba(0,0,0,0.3)}
+.money-container{display:flex;justify-content:space-between;align-items:center;background:#1e2530;padding:12px 16px;border-radius:12px;border:1px solid #2d3748;margin-top:10px}
+.money{font-size:28px;color:#10b981;font-weight:800;text-shadow:0 2px 10px rgba(16,185,129,0.2)}
+.exp-bar-bg{background:#2d3748;border-radius:20px;height:12px;width:100%;margin-top:6px;overflow:hidden;border:1px solid #4a5568}
+.exp-bar-fill{background:linear-gradient(90deg, #3b82f6, #60a5fa);height:100%;width:0%;transition:width .4s ease}
+button{background:linear-gradient(180deg, #ffa600, #d47a00);border:0;padding:14px;border-radius:10px;font-size:14px;font-weight:bold;width:100%;margin-top:10px;color:#0d0f13;cursor:pointer;transition:all .15s ease;box-shadow:0 3px 6px rgba(0,0,0,0.2);text-transform:uppercase;letter-spacing:0.5px}
+button:hover:not(:disabled){filter:brightness(1.1);transform:translateY(-1px)}
+button:disabled{background:#232d3d;color:#4a5568;cursor:not-allowed;box-shadow:none;background-image:none}
+button:active:not(:disabled){transform:translateY(1px)}
+nav{display:flex;gap:6px;overflow-x:auto;padding-bottom:6px;margin-bottom:6px;scrollbar-width:none}
+nav::-webkit-scrollbar{display:none}
+nav button{background:#1c2330;color:#a0aec0;margin-top:0;flex:1;min-width:95px;font-size:12px;padding:10px 4px;border:1px solid #2d3748;text-transform:none;letter-spacing:0}
+nav button.active{background:#ff9900;color:#0d0f13;border-color:#ff9900;font-weight:800}
+small{color:#718096;font-size:13px}
+.msg{margin-top:12px;font-weight:bold;color:#ff9900;text-align:center;padding:10px;background:rgba(255,153,0,0.08);border-radius:10px;border:1px dashed rgba(255,153,0,0.25);font-size:13px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px}
+.grid button{margin-top:0}
+.sub-card{background:#1c2330;border-radius:12px;padding:14px;margin:10px 0;border:1px solid #2d3748}
+.sub-card h3{margin:0 0 6px 0;font-size:16px;color:#ff9900;display:flex;justify-content:space-between;align-items:center}
+.sub-card p{margin:4px 0;font-size:13px;color:#a0aec0}
+.badge{padding:3px 8px;border-radius:6px;font-size:11px;font-weight:bold;background:#10b981;color:white}
+.badge.none{background:#ef4444}
+.salon-header{border-left:4px solid #ff9900;padding-left:8px;margin:14px 0 6px 0;font-size:15px;color:#fff;font-weight:bold}
+.salon-desc{font-size:12px;color:#718096;margin-bottom:8px}
+.license-plate{background:#fff;color:#000;padding:2px 8px;border-radius:4px;font-family:'Courier New',Courier,monospace;font-weight:bold;border:1px solid #000;display:inline-block;letter-spacing:1px;font-size:14px}
+.fuel-bar{background:#2d3748;border-radius:4px;height:8px;width:100%;overflow:hidden;margin-top:4px}
+.fuel-bar-fill{background:#f59e0b;height:100%;width:100%}
+input[type="text"], input[type="number"]{width:100%;padding:10px;border-radius:6px;background:#2d3748;color:white;border:1px solid #4a5568;font-size:16px;margin-bottom:10px}
+.tab-content{display:none}
+.tab-content.active{display:block}
+.admin-badge{background:#ef4444;color:#fff;padding:2px 6px;border-radius:4px;font-size:11px;font-weight:bold;text-transform:uppercase;animation:pulse 1.5s infinite}
+@keyframes pulse { 0% {opacity: 0.8;} 50% {opacity: 1; box-shadow: 0 0 8px #ef4444;} 100% {opacity: 0.8;} }
+.admin-btn{background:linear-gradient(180deg, #dc2626, #991b1b);color:white}
+</style>
+</head>
+<body>
+<header>
+<div class="server-badge">BLACK RUSSIA</div>
+<h1>🇷🇺 RUSSIA ROLEPLAY</h1>
+<div style="color:#718096;font-size:13px;margin-top:3px;font-weight:500">Система Аукциона, Аксессуаров и Ежедневных Квестов</div>
+</header>
+<main>
+<div class="card">
+<div style="display:flex; justify-content:space-between; align-items:center;">
+<div>
+<h2 id="p-name" style="margin:0;font-size:18px;color:#fff">Vovan_Brazzers</h2>
+<small>Статус: <span class="admin-badge">Главный Администратор</span></small>
+</div>
+<div style="text-align:right">
+<span style="font-weight:bold;color:#3b82f6;font-size:15px" id="lvl-display">15 LVL</span><br>
+<small id="exp-display">0 / 64 EXP</small>
+</div>
+</div>
+<div class="exp-bar-bg"><div id="exp-fill" class="exp-bar-fill"></div></div>
+<div class="money-container">
+<span style="color:#718096;font-size:13px;font-weight:bold">На руках:</span>
+<div class="money"><span id="money">50 000 000</span> ₽</div>
+</div>
+</div>
+
+<nav>
+<button class="active" onclick="switchTab('main-tab', this)">Главная</button>
+<button onclick="switchTab('salon-tab', this)">Автосалон</button>
+<button onclick="switchTab('auction-tab', this)">Аукцион</button>
+<button onclick="switchTab('quests-tab', this)">Квесты</button>
+<button style="border-color:#ef4444;color:#ef4444;font-weight:bold" onclick="switchTab('admin-tab', this)">АДМ-ПАНЕЛЬ</button>
+</nav>
+
+<div id="main-tab" class="tab-content active">
+<div class="card">
+<div class="salon-header">Заработок на спавне</div>
+<p style="font-size:13px;color:#a0aec0">Работайте шахтером или водителем автобуса, чтобы поднять стартовый капитал.</p>
+<button onclick="earnMoney(15000, 2)">Работать на шахте (+15,000 ₽ / +2 EXP)</button>
+</div>
+<div id="info-msg" class="msg">Добро пожаловать, Главный Администратор Vovan_Brazzers! Панель управления доступна.</div>
+</div>
+
+<div id="salon-tab" class="tab-content">
+<div class="card">
+<div class="salon-header">Низкий класс</div>
+<div class="sub-card">
+<h3>VAZ 2107 <span class="badge">В наличии</span></h3>
+<div class="license-plate">А777МР 77</div>
+<div class="fuel-bar"><div class="fuel-bar-fill" style="width: 85%"></div></div>
+<button disabled>Уже куплено</button>
+</div>
+<div class="salon-header">Высокий класс</div>
+<div class="sub-card">
+<h3>BMW M5 F90 <span class="badge none">Нет</span></h3>
+<p>Стоимость: 9,500,000 ₽</p>
+<button onclick="buyCar(9500000, 'BMW M5 F90', this)">Купить авто</button>
+</div>
+</div>
+</div>
+
+<div id="auction-tab" class="tab-content">
+<div class="card">
+<div class="salon-header">Текущий лот: Бизнес «АЗС Южный»</div>
+<p style="font-size:13px;color:#a0aec0">Минимальная ставка: <span style="color:#10b981">12,000,000 ₽</span></p>
+<input type="number" id="bet-input" placeholder="Введите сумму ставки">
+<button onclick="placeBid()">Сделать ставку</button>
+</div>
+</div>
+
+<div id="quests-tab" class="tab-content">
+<div class="card">
+<div class="salon-header">Ежедневные задания</div>
+<div class="sub-card">
+<h3>Перевозчик <span class="badge" style="background:#f59e0b">В процессе</span></h3>
+<p>Развезите 5 заказов на фуре.</p>
+<button onclick="completeQuest(this, 120000, 10)">Завершить рейс (+120к ₽)</button>
+</div>
+</div>
+</div>
+
+<div id="admin-tab" class="tab-content">
+<div class="card" style="border-color:#ef4444">
+<div class="salon-header" style="border-left-color:#ef4444;color:#ef4444">A-PANEL | Управление сервером</div>
+<p style="font-size:13px;color:#a0aec0">Инструменты разработчика для Vovan_Brazzers.</p>
+<div class="grid">
+<button class="admin-btn" onclick="adminGiveMoney(10000000)">+10 МЛН ₽</button>
+<button class="admin-btn" onclick="adminGiveMoney(100000000)">+100 МЛН ₽</button>
+<button class="admin-btn" onclick="adminGiveExp(50)">+50 EXP</button>
+<button class="admin-btn" onclick="adminResetProgress()">Сбросить всё</button>
+</div>
+</div>
+</div>
+</main>
+
+<script>
+let balance = 50000000;
+let exp = 0;
+let maxExp = 64;
+let lvl = 15;
+
+function updateUI() {
+document.getElementById('money').innerText = balance.toLocaleString('ru-RU');
+document.getElementById('lvl-display').innerText = lvl + " LVL";
+document.getElementById('exp-display').innerText = exp + " / " + maxExp + " EXP";
+document.getElementById('exp-fill').style.width = (exp / maxExp * 100) + "%";
+}
+
+function switchTab(tabId, btn) {
+document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+document.querySelectorAll('nav button').forEach(b => b.classList.remove('active'));
+document.getElementById(tabId).classList.add('active');
+btn.classList.add('active');
+}
+
+function earnMoney(amount, expAmount) {
+balance += amount;
+exp += expAmount;
+checkLvlUp();
+updateUI();
+}
+
+function checkLvlUp() {
+if(exp >= maxExp) {
+exp -= maxExp;
+lvl++;
+maxExp = Math.floor(maxExp * 1.2);
+showMsg("🔥 Поздравляем! Вы получили новый уровень: " + lvl + " LVL!");
+}
+}
+
+function buyCar(price, name, btn) {
+if(balance >= price) {
+balance -= price;
+btn.disabled = true;
+btn.innerText = "Куплено";
+showMsg("🚗 Вы успешно приобрели " + name + "!");
+updateUI();
+} else {
+showMsg("❌ Недостаточно средств для покупки!");
+}
+}
+
+function placeBid() {
+let bid = parseInt(document.getElementById('bet-input').value);
+if(bid >= 12000000 && balance >= bid) {
+balance -= bid;
+showMsg("💰 Ваша ставка " + bid.toLocaleString('ru-RU') + " ₽ успешно принята!");
+updateUI();
+} else {
+showMsg("❌ Неверная сумма или недостаточно средств!");
+}
+}
+
+function completeQuest(btn, prize, expPrize) {
+balance += prize;
+exp += expPrize;
+btn.disabled = true;
+btn.innerText = "Выполнено";
